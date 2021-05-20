@@ -9,3 +9,90 @@
     font-size: 60%;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+header {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.quiz-start {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+#start-btn {
+    font-size: 3rem;
+    padding: 2.5rem 0;
+    width: 30rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    text-decoration: none;
+    color: white;
+    background: rgb(146, 146, 250);
+    border-radius: 5px;
+}
+
+#start-btn:hover{
+    cursor: pointer;
+    box-shadow: 0 0.5rem 1rem 0 rgba(9, 130, 244, 0.8);
+}
+ h1 {
+     font-size: 5.4rem;
+     color: white;
+     margin-bottom: 5rem;
+ }
+
+ h2 {
+     font-size: 4.2rem;
+     color: white;
+     margin-top: 3rem;
+     margin-bottom: 4rem;
+ }
+
+ #question-text {
+     font-size: 40px;
+     color: white;
+     margin: 0 auto;
+     padding: 0 auto;
+     border: thin;
+ }
+
+
+ .quiz-questions {
+     display: flex;
+     flex-wrap: wrap;
+     flex-direction: column;
+ }
+
+ .quiz-answers {
+     justify-content: center;
+     align-items: center;
+ }
+
+ .answer-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+ }
+
+ #btn-a, #btn-b, #btn-c, #btn-d {
+    font-size: 3rem;
+    padding: 2.5rem 0;
+    width: 30rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    text-decoration: none;
+    color: white;
+    background: rgb(146, 146, 250);
+    border-radius: 5px;
+ }
