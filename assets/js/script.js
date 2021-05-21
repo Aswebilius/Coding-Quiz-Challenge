@@ -1,3 +1,8 @@
+const countDown= 5;
+
+let timeLeft = countDown * 60;
+
+
 var startButtonEl = document.querySelector("#start-button");
 var buttonAEl = document.querySelector("#btn-a");
 var buttonBEl = document.querySelector("#btn-b");
