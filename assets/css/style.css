@@ -75,11 +75,18 @@ header {
      margin-top: 3rem;
      margin-bottom: 4rem;
  }
- #timer {
+
+ #utilities {
      justify-content: left;
      color: white;
      font-size: 30px;
  }
+
+ .alert {
+     color: red;
+
+ }
+
  #question-text {
      font-size: 40px;
      color: white;

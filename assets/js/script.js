@@ -1,10 +1,7 @@
-const countDown= 5;
-
-let timeLeft = countDown * 60;
-
-let score = 0;
-
+let timer;
 var startButtonEl = document.getElementById("start-btn");
+var utilitiesEl = document.getElementById("utilities");
+var timerEl = document.getElementById("timer")
 var feedBackEl = document.getElementById("feedback-text");
 var quizQuestionsEl = document.getElementById("question-text");
 var quizAnswersEl = document.getElementById("quiz-answers");
@@ -53,10 +50,11 @@ startButtonEl.addEventListener('click', startQuiz);
 
 function startQuiz() {
 startButtonEl.classList.add('clear')
+utilitiesEl.classList.remove('clear')
 quizQuestionsEl.classList.remove('clear')
 quizAnswersEl.classList.remove('clear')
 getQuestion();
-quizTimer();
+quizTimer(40);
 }
 
 function getQuestion() {
@@ -102,6 +100,9 @@ function answerOne() {
     buttonBEl.addEventListener('click', feedBackWrong);
     buttonCEl.addEventListener('click', feedBackWrong);
     buttonDEl.addEventListener('click', feedBackWrong);
+
+
+    buttonAEl.addEventListener('click', scoringAnswers);
 }
 
 function answerTwo(){
@@ -175,6 +176,7 @@ function feedBackRight(){
     feedBackEl.classList.remove('clear')
     feedBackEl.classList = ("correct");
     feedBackEl.innerText = ("Correct");
+
 }
 
 function feedBackWrong(){
@@ -183,20 +185,34 @@ function feedBackWrong(){
     feedBackEl.innerText = ("Incorrect");
 
 }
-function quizTimer() {
+function quizTimer(time) {
+timer = setInterval(timer, 1000);
+function timer(){
+    timerEl.textContent = time;
+    time--;
+    if (time == 29){
+        timerEl.classList.add('alert');
+    }
+    if( time == -2){
+        quizOver();
+    }
+}
 
 }
 
 function quizOver() {
     alert("Thank You for Playing!");
     highScores();
+    return startQuiz();
 }
 
 function scoringAnswers(){
 
+
 }
 
 function highScores() {
-var player = prompt("Please enter your initials: ");
+var playerIntitials = prompt("Please enter your initials: ");
+console.log(playerIntitials);
 
 }
