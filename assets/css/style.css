@@ -136,10 +136,10 @@ header {
     display: none;
 }
 
-.feedback-text.correct {
+.correct {
     color: rgb(16, 255, 16);
 }
 
-.feedback-text.incorrect {
+.incorrect {
     color: rgb(255, 15, 15);
 }
