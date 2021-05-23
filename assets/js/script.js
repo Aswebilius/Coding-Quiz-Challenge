@@ -1,15 +1,16 @@
 let timer;
-var startButtonEl = document.getElementById("start-btn");
-var utilitiesEl = document.getElementById("utilities");
-var timerEl = document.getElementById("timer")
-var feedBackEl = document.getElementById("feedback-text");
-var quizQuestionsEl = document.getElementById("question-text");
-var quizAnswersEl = document.getElementById("quiz-answers");
-var answerButtons = document.getElementsByClassName("btn");
-var buttonAEl = document.getElementById("btn-a");
-var buttonBEl = document.getElementById("btn-b");
-var buttonCEl = document.getElementById("btn-c");
-var buttonDEl = document.getElementById("btn-d");
+var startButtonEl = document.querySelector('#start-btn');
+var utilitiesEl = document.querySelector('#utilities');
+var timerEl = document.querySelector('#timer');
+var scoreEl = document.querySelector('#score');
+var feedBackEl = document.querySelector('#feedback-text');
+var quizQuestionsEl = document.querySelector('#question-text');
+var quizAnswersEl = document.querySelector('#quiz-answers');
+var answerButtons = document.querySelector('btn');
+var buttonAEl = document.querySelector('#btn-a');
+var buttonBEl = document.querySelector('#btn-b');
+var buttonCEl = document.querySelector('#btn-c');
+var buttonDEl = document.querySelector('#btn-d');
 
 var questions = [
                  "What does HTML stand for?",
@@ -20,7 +21,7 @@ var questions = [
                 ];
 
 var answers = [
-                "Hyper Text Markup Language",
+                "Hyper Text Markup Language", 
                 "Hipster Texting Marketing Lingo",
                 "Hyper Threading Marking List",
                 "Hyper Targeting Missile Lock",
@@ -46,6 +47,14 @@ var answers = [
                 "ECMAScript"
               ];
 
+var score = [
+            "100",
+            "200",
+            "300",
+            "400",
+            "500",
+            ];
+
 startButtonEl.addEventListener('click', startQuiz);
 
 function startQuiz() {
@@ -53,8 +62,8 @@ startButtonEl.classList.add('clear')
 utilitiesEl.classList.remove('clear')
 quizQuestionsEl.classList.remove('clear')
 quizAnswersEl.classList.remove('clear')
+quizTimer(60);
 getQuestion();
-quizTimer(40);
 }
 
 function getQuestion() {
@@ -102,7 +111,6 @@ function answerOne() {
     buttonDEl.addEventListener('click', feedBackWrong);
 
 
-    buttonAEl.addEventListener('click', scoringAnswers);
 }
 
 function answerTwo(){
@@ -120,6 +128,7 @@ function answerTwo(){
     buttonBEl.addEventListener('click', feedBackWrong);
     buttonCEl.addEventListener('click', feedBackWrong);
     buttonDEl.addEventListener('click', feedBackWrong);
+    
 }
 
 function answerThree(){
@@ -190,29 +199,32 @@ timer = setInterval(timer, 1000);
 function timer(){
     timerEl.textContent = time;
     time--;
+
     if (time == 29){
         timerEl.classList.add('alert');
     }
-    if( time == -2){
-        quizOver();
+    if( time === -2){
+        return quizOver();
     }
 }
-
 }
-
+function penalty(){
+    
+}
 function quizOver() {
     alert("Thank You for Playing!");
     highScores();
-    return startQuiz();
+    timerEl.classList.add('clear');
 }
 
 function scoringAnswers(){
-
-
+    scoreEl.textContent = score;
+    score++;
 }
 
 function highScores() {
 var playerIntitials = prompt("Please enter your initials: ");
-console.log(playerIntitials);
+localStorage.setItem(playerIntitials, "");
+localStorage.getItem(score, "");
 
 }
